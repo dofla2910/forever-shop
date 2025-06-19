@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import 'tailwindcss';
+
+body {
+  font-family: 'Outfit', sans-serif;
+  box-sizing: border-box;
+  font-optical-sizing: auto;
+  font-style: normal;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  position: relative;
+  line-height: 1.5;
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.link-list {
+  @apply hidden sm:flex gap-5 text-sm text-gray-700 uppercase;
+  @apply transition delay-150 duration-1000 ease-in-out;
+
+  a {
+    @apply flex flex-col items-center gap-1;
+
+    hr {
+      @apply hidden w-1/2 border-none h-[1.5px] bg-gray-700;
+    }
+  }
+
+  a.active {
+    @apply text-gray-900;
+
+    hr {
+      @apply block;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  a.active {
+    @apply bg-black text-white;
+  }
+}
+
+@theme {
+  --font-prata: 'Prata', serif;
+  --font-outfit: 'Outfit', sans-serif;
+}

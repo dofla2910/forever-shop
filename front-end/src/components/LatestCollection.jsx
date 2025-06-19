@@ -1,0 +1,37 @@
+import { useContext, useEffect, useState } from 'react'
+import { ShopContext } from '../contexts/ShopContext'
+import Title from './Title'
+import { Link } from 'react-router'
+import ProductItem from './ProductItem'
+
+const LatestCollection = () => {
+  const { products } = useContext(ShopContext)
+  const [latestProducts, setLatestProducts] = useState([])
+  // const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setLatestProducts([...products].sort(() => Math.random() - 0.5).slice(0, 10))
+  }, [products])
+
+  return (
+    <>
+      <div className='text-center py-8 text-3xl'>
+        <Title first='Latest' second='Collections' />
+        <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
+          Explore our latest styles in fashion and design. Fresh looks made to stand out from the rest.
+        </p>
+      </div>
+      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
+        {latestProducts.slice(0, 10).map((product) => {
+          return (
+            <Link to={`/product/${product._id}`} key={product.id} className='text-gray-700 cursor-pointer'>
+              <ProductItem product={product} />
+            </Link>
+          )
+        })}
+      </div>
+    </>
+  )
+}
+
+export default LatestCollection
