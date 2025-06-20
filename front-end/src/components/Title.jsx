@@ -1,6 +1,6 @@
 const Title = ({ first, second }) => {
   return (
-    <div className='inline-flex gap-2 items-center mb-3'>
+    <div className='inline-flex gap-2 items-center text-[calc(1.5vw+1.5vh)]'>
       <p className='text-gray-500 uppercase'>
         <span>{first} </span>
         <span className='text-gray-700 font-medium'>{second}</span>

@@ -28,14 +28,14 @@ const Navbar = () => {
             <span>Contact</span>
             <hr />
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to='/admin-panel'
             target='_blank'
             rel='noopener noreferrer'
             className='border px-5 text-xs py-1 rounded-full -mt-2 border-gray-200 normal-case hover:bg-gray-100 hover:text-black'
           >
             <span className='mt-1'>Admin Panel</span>
-          </NavLink>
+          </NavLink> */}
         </ul>
         <div className='flex items-center gap-6'>
           <img src={assets.search_icon} alt='Search' className='w-5 cursor-pointer' />
@@ -85,9 +85,9 @@ const Navbar = () => {
             <NavLink to='/contact' className='py-2 pl-6 border' onClick={() => setVisible(false)}>
               Contact
             </NavLink>
-            <NavLink to='/admin-panel' className='py-2 pl-6 border' onClick={() => setVisible(false)}>
+            {/* <NavLink to='/admin-panel' className='py-2 pl-6 border' onClick={() => setVisible(false)}>
               Admin Panel
-            </NavLink>
+            </NavLink> */}
           </div>
         </div>
       </nav>
