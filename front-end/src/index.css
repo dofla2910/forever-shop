@@ -53,3 +53,18 @@ body {
   --font-prata: 'Prata', serif;
   --font-outfit: 'Outfit', sans-serif;
 }
+
+@layer utilities {
+  .transition {
+    @apply transition-all duration-2000 ease-in-out;
+  }
+  .transition-fast {
+    @apply transition-all duration-1500 ease-in-out;
+  }
+  .transition-slow {
+    @apply transition-all duration-3000 ease-in-out;
+  }
+  .transition-delay {
+    @apply transition-all delay-150 ease-in-out;
+  }
+}

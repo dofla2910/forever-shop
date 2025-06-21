@@ -1,3 +1,5 @@
+import PrimaryButton from './PrimaryButton'
+
 const Subscribe = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -20,12 +22,7 @@ const Subscribe = () => {
           required
           className='w-full sm:flex-1 outline-none border-none'
         />
-        <button
-          type='submit'
-          className='bg-black text-white text-xs px-10 py-4 uppercase font-semibold hover:bg-[#F7374F] transition-colors duration-300 cursor-pointer'
-        >
-          Subscribe
-        </button>
+        <PrimaryButton type='submit'>Subscribe</PrimaryButton>
       </form>
     </div>
   )
