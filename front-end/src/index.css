@@ -30,7 +30,7 @@ body {
     @apply flex flex-col items-center gap-1;
 
     hr {
-      @apply hidden w-1/2 border-none h-[1.5px] bg-gray-700;
+      @apply opacity-0 w-1/2 border-none h-[1.5px] bg-gray-700;
     }
   }
 
@@ -38,7 +38,7 @@ body {
     @apply text-gray-900;
 
     hr {
-      @apply block;
+      @apply opacity-100;
     }
   }
 }

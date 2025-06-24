@@ -1,4 +1,4 @@
-const SortBySelect = ({ values, defaultValue, changeMethod }) => {
+const SortBySelect = ({ options, defaultValue, changeMethod }) => {
   return (
     <select
       name='sort'
@@ -6,12 +6,11 @@ const SortBySelect = ({ values, defaultValue, changeMethod }) => {
       defaultValue={defaultValue}
       onChange={(e) => {
         changeMethod(e.target.value)
-        console.log(`Selected sort option: ${e.target.value}`) // Debugging log
       }}
     >
-      {values.map((value, index) => (
-        <option key={index} value={value}>
-          Sort by: {value}
+      {options.map((option, index) => (
+        <option key={index} value={option.value}>
+          Sort by: {option.value}
         </option>
       ))}
     </select>
