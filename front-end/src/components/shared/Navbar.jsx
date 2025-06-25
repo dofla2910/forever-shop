@@ -1,9 +1,12 @@
 import { Link, NavLink } from 'react-router'
 import { assets } from '../../assets/frontend_assets/assets'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { ShopContext } from '../../contexts/ShopContext'
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false)
+  const { search } = useContext(ShopContext)
+  const { toggleSearch } = search
 
   return (
     <header>
@@ -38,7 +41,9 @@ const Navbar = () => {
           </NavLink> */}
         </ul>
         <div className='flex items-center gap-6'>
-          <img src={assets.search_icon} alt='Search' className='w-5 cursor-pointer' />
+          <Link to='/collection'>
+            <img src={assets.search_icon} alt='Search' className='w-5 cursor-pointer' onClick={toggleSearch} />
+          </Link>
           <div
             className='group relative'
             onClick={() => document.querySelector('.dropdown-menu').classList.toggle('hidden')}

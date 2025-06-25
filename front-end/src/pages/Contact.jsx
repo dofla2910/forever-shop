@@ -10,7 +10,7 @@ const Contact = () => {
         <Title first='Contact' second='us' />
       </div>
       <FlexImageWithDes src={assets.contact_img}>
-        <b class='text-gray-800'>Our Store</b>
+        <b className='text-gray-800'>Our Store</b>
         <p>
           54709 Willms Station <br />
           Suite 350, Washington, USA
@@ -19,7 +19,7 @@ const Contact = () => {
           Tel: (415) 555-0132 <br />
           Email: admin@forever.com
         </p>
-        <b class='text-gray-800'>Careers at Forever</b>
+        <b className='text-gray-800'>Careers at Forever</b>
         <p>Learn more about our teams and job openings.</p>
       </FlexImageWithDes>
       <Subscribe />

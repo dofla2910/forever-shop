@@ -1,4 +1,4 @@
-const FilterBox = ({ title, values, filterValues = [], changeMethod }) => {
+const FilterBox = ({ title, values, filterValues = [], handleFilter = () => {} }) => {
   const handleChange = (e) => {
     const { value, checked } = e.target
     let newFilterValues
@@ -7,7 +7,7 @@ const FilterBox = ({ title, values, filterValues = [], changeMethod }) => {
     } else {
       newFilterValues = filterValues.filter((v) => v !== value)
     }
-    changeMethod(newFilterValues)
+    handleFilter(newFilterValues)
   }
 
   return (

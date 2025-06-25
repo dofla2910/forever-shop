@@ -13,7 +13,6 @@ const Product = () => {
     const productId = location.pathname.split('/').pop()
     // console.log('Product ID:', productId)
     const foundProduct = products.find((p) => p._id === productId)
-    console.log('Found Product:', foundProduct)
     if (foundProduct) {
       setProduct(foundProduct)
     }
