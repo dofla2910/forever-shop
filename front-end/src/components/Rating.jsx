@@ -1,6 +1,6 @@
 import { assets } from '../assets/frontend_assets/assets'
 
-const Rating = ({ rate, quantity }) => {
+const Rating = ({ rate, quantity, className }) => {
   const stars = [0, 1, 2, 3, 4].map((index) => (
     <span key={index} className='w-3'>
       {getStarIcon(index, rate)}
@@ -8,7 +8,7 @@ const Rating = ({ rate, quantity }) => {
   ))
 
   return (
-    <div className='flex items-center gap-1 text-sm'>
+    <div className={'flex items-center gap-1 ' + className}>
       {stars} <span className='pl-2'>({quantity})</span>
     </div>
   )
