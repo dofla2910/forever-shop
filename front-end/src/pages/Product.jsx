@@ -5,9 +5,11 @@ import ImageGallery from '../components/ImageGallery'
 import Rating from '../components/Rating'
 import SelectSize from '../components/SelectSize'
 import PrimaryButton from '../components/PrimaryButton'
+import RelatedProduct from '../components/RelatedProduct'
 
 const Product = () => {
   const [product, setProduct] = useState(null)
+  const [size, setSize] = useState(null)
   const { products, currency } = useContext(ShopContext)
   const location = useLocation()
 
@@ -25,7 +27,7 @@ const Product = () => {
       {product ? (
         <div className='flex flex-col items-stretch gap-12 sm:flex-row'>
           <div className='flex-1 sm:max-h-96'>
-            <ImageGallery imageList={[...product.image, ...product.image, ...product.image]} />
+            <ImageGallery imageList={product.image} />
           </div>
           <div className='flex-1'>
             <p className='text-2xl font-medium my-2'>{product.name}</p>
@@ -35,7 +37,7 @@ const Product = () => {
               {product.price}
             </p>
             <p className='text-gray-500 mb-8'>{product.description}</p>
-            <SelectSize sizes={product.sizes} />
+            <SelectSize sizes={product.sizes} selectedSize={size} setSelectedSize={setSize} />
             <PrimaryButton className='my-8'>Add to Cart</PrimaryButton>
             <hr className='text-gray-300 sm:w-4/5' />
             <div className='text-gray-500 text-sm flex flex-col gap-1 mt-5'>
@@ -48,6 +50,7 @@ const Product = () => {
       ) : (
         ''
       )}
+      <RelatedProduct />
     </div>
   )
 }
